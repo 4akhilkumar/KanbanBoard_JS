@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.kanban {
+    display: flex;
+    flex-direction: row;
+    background: rgb(255, 255, 255);
+    border-radius: 6px;
+    font-family: Poppins, sans-serif;
+    margin: 1rem auto;
+    gap: 1rem;
+    overflow-x: auto;
+    max-width: fit-content;
+}
+
+.kanban__column:nth-child(1) {
+    background: #F37878;
+    /* background: #f4f5f7; */
+}
+
+.kanban__column:nth-child(2) {
+    background: #ffe380;
+}
+
+.kanban__column:nth-child(3) {
+    background: #B8F1B0;
+    /* background: #D4F6CC; */
+    /* background: #f4f5f7; */
+}
+
+.kanban__column {
+    /* flex: 1; Ensure equal width for all kanban__column */
+    padding: 1rem;
+    border-radius: .4rem;
+    min-width: 25rem;
+    max-width: 25rem;
+}
+
+.kanban__column-tic {
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.kanban__column-title {
+    font-size: 15px;
+    user-select: none;
+    color: #424242;
+}
+
+.kanban__column-items-count {
+    color: #616161;
+}
+
+.kanban__item-input {
+    background: #FFF;
+    cursor: pointer;
+    padding: .5rem .4rem;
+    border-radius: .2rem;
+    box-shadow: 0px 0px 1px 0px #00000080;
+}
+
+.kanban__dropzone {
+    height: 10px;
+    transition: background 0.15s, height 0.15s;
+}
+
+.kanban__dropzone--active {
+    height: 20px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.kanban__column-button-area {
+    display: flex;
+    justify-content: center;
+}
+
+.kanban__add-item {
+    background: transparent;
+    border: none;
+    margin: auto 50%;
+    cursor: pointer;
+}
+
+.kanban__column-items-count {
+    padding: .2rem;
+    /* background: #ffab00; */
+}
