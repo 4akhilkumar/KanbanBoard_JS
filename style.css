@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #f4f5f7;
+}
+
 .kanban {
     display: flex;
     flex-direction: row;
@@ -63,6 +67,61 @@
     padding: .5rem .4rem;
     border-radius: .2rem;
     box-shadow: 0px 0px 1px 0px #00000080;
+    width: 100%;
+}
+
+.kanban__item-input-options {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.kanban__item-options {
+    position: relative;
+}
+
+.kanban__item-options .more-options {
+    z-index: 1;
+    bottom: -20px;
+    right: 25px;
+    padding: .5rem .1rem;
+    background: #fff;
+    position: absolute;
+    border-radius: .25rem;
+    transform: scale(0);
+    transform-origin: top right;
+    box-shadow: 0 0 6px 1px rgb(0 0 0 / 15%);
+    transition: transform 0.2s ease;
+}
+
+.kanban__item-options.show ul.more-options {
+    transform: scale(1);
+}
+
+.kanban__item-options button.item__more-options {
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: border 0.15s;
+}
+
+.kanban__item-options button.item__more-options:hover {
+    border: 1px solid #bdbdbd80;
+    border-radius: .25rem;
+}
+
+.more-options li {
+    list-style: none;
+    font-size: .8rem;
+    transition: background 0.15s;
+    padding: .2rem .8rem;
+    border-radius: .2rem;
+    cursor: pointer;
+}
+
+.more-options li:hover {
+    background: #00000020;
 }
 
 .kanban__dropzone {
@@ -83,7 +142,7 @@
 .kanban__add-item {
     background: transparent;
     border: none;
-    margin: auto 50%;
+    margin: 1rem 50% 0 50%;
     cursor: pointer;
 }
 
