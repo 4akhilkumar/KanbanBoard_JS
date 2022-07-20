@@ -1,6 +1,8 @@
 import KanbanAPI from '../api/KanbanAPI.js';
 import Item from './Item.js';
 import DropZone from './DropZone.js';
+import KanbanStatus from "./KanbanStatus.js";
+import kanban from './Kanban.js';
 
 export default class Column {
     constructor(id, title) {
@@ -21,6 +23,25 @@ export default class Column {
             // TODO: add item
             const newItem = KanbanAPI.insertItem(id, "")
             this.renderItem(newItem);
+
+            function removeAllChildNodes(parent) {
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
+            }
+            // Here update the coulmns count
+            const kanban_container = document.querySelector('.kanban');
+            removeAllChildNodes(kanban_container);
+            new kanban(
+                document.querySelector(".kanban")
+            );
+    
+            // Update status
+            const status_container = document.querySelector('.Kanban__board-status');
+            removeAllChildNodes(status_container);
+            new KanbanStatus(
+                document.querySelector(".Kanban__board-status")
+            );
         })
 
         // Count of each column

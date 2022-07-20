@@ -1,6 +1,7 @@
 import KanbanAPI from "../api/KanbanAPI.js";
 import DropZone from "./DropZone.js";
 import kanban from "./Kanban.js";
+import KanbanStatus from "./KanbanStatus.js";
 
 export default class Item {
     constructor(id, content) {
@@ -67,6 +68,25 @@ export default class Item {
                 KanbanAPI.deleteItem(id);
                 this.elements.input.removeEventListener("blur", onBlur);
                 this.elements.root.parentElement.removeChild(this.elements.root);
+
+                function removeAllChildNodes(parent) {
+                    while (parent.firstChild) {
+                        parent.removeChild(parent.firstChild);
+                    }
+                }
+                // Here update the coulmns count
+                const kanban_container = document.querySelector('.kanban');
+                removeAllChildNodes(kanban_container);
+                new kanban(
+                    document.querySelector(".kanban")
+                );
+
+                // Update status
+                const status_container = document.querySelector('.Kanban__board-status');
+                removeAllChildNodes(status_container);
+                new KanbanStatus(
+                    document.querySelector(".Kanban__board-status")
+                );
             }
 
             // show class will be removed from .kanban__item-options if delete is false
@@ -77,22 +97,6 @@ export default class Item {
 
         this.elements.root.addEventListener("dragstart", e => {
             e.dataTransfer.setData("text/plain", id);
-        });
-
-        function removeAllChildNodes(parent) {
-            while (parent.firstChild) {
-                parent.removeChild(parent.firstChild);
-            }
-        }
-
-        this.elements.root.addEventListener("drop", e => {
-            // Here update the coulmns count
-            const container = document.querySelector('.kanban');
-            removeAllChildNodes(container);
-            new kanban(
-                document.querySelector(".kanban")
-            );
-            
         });
 
         this.elements.input.addEventListener("drop", e => {

@@ -1,4 +1,6 @@
 import KanbanAPI from "../api/KanbanAPI.js";
+import kanban from "./Kanban.js";
+import KanbanStatus from "./KanbanStatus.js";
 
 export default class DropZone {
     static createDropZone() {
@@ -41,6 +43,25 @@ export default class DropZone {
                 columnId,
                 position: droppedIndex
             });
+
+            function removeAllChildNodes(parent) {
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
+            }
+            // Here update the coulmns count
+            const kanban_container = document.querySelector('.kanban');
+            removeAllChildNodes(kanban_container);
+            new kanban(
+                document.querySelector(".kanban")
+            );
+    
+            // Update status
+            const status_container = document.querySelector('.Kanban__board-status');
+            removeAllChildNodes(status_container);
+            new KanbanStatus(
+                document.querySelector(".Kanban__board-status")
+            );
         });
 
         return dropZone;
