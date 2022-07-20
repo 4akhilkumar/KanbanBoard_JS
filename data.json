@@ -3,20 +3,16 @@
         "id": 1,
         "items": [
             {
-                "id": 18415,
-                "content": "lorem ipsum"
-            },
-            {
-                "id": 88893,
-                "content": "Let me think of it"
-            },
-            {
                 "id": 98022,
-                "content": "Nothing to worry!"
+                "content": "As a Sales Professional, I want to generate reports so that I can take a decision on the marketing strategy for the upcoming quarter"
             },
             {
-                "id": 3940,
-                "content": "Okay then!"
+                "id": 711,
+                "content": "As a Banking Customer, I want to access net banking, so that I can access my account and make transactions"
+            },
+            {
+                "id": 98956,
+                "content": "As an Administrator of the software, I want to access master records so that I can make changes to customer data"
             }
         ]
     },
@@ -25,11 +21,11 @@
         "items": [
             {
                 "id": 71453,
-                "content": "This module is WIP"
+                "content": "As a Banking Customer, I want to access/view summary of my savings account, so that I know my balance and other details"
             },
             {
-                "id": 33846,
-                "content": "About to done"
+                "id": 32126,
+                "content": "As a Banking Customer, I want to Login to Net banking so that I can view credit card details"
             }
         ]
     },
@@ -37,12 +33,20 @@
         "id": 3,
         "items": [
             {
+                "id": 88893,
+                "content": "As a Banking Customer, I want to transfer funds within my own accounts so that I can move some balance across my accounts"
+            },
+            {
                 "id": 14281,
-                "content": "Done"
+                "content": "As a Net Banking Administrator, I want to have the customer’s data backed up so that I can restore it any time in case of issues"
+            },
+            {
+                "id": 33846,
+                "content": "As a Net Banking application, I want to shake hands with another bank using a specific formatted XML so that funds can be transferred based on the customers’ needs"
             },
             {
                 "id": 96134,
-                "content": "Completed"
+                "content": "As a Banking Customer, I want to add beneficiary to my account, so that I can transfer funds to the beneficiary"
             }
         ]
     }
