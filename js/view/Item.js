@@ -111,17 +111,24 @@ export default class Item {
 
         return range.createContextualFragment(`
         <div class="kanban__item" draggable="true">
-            <div class="kanban__item-input-options">
-                <div class="kanban__item-input" contenteditable></div>
-                <div class="kanban__item-options">
-                    <button class="item__more-options">
-                        <span class="material-symbols-outlined" 
-                            data-itemmoreoptions="moreoptions"
-                        > more_vert </span>
-                    </button>
-                    <ul class="more-options">
-                        <li class="item__more-options-delete">Delete</li>
-                    </ul>
+            <div class="kanban__item-mainc">
+                <div class="kanban__item-fc">
+                    <div class="kanban__item-drag-area">
+                        <span class="material-symbols-outlined rotate90-icon"> drag_indicator </span>
+                    </div>
+                    <div class="kanban__item-input" contenteditable></div>
+                </div>
+                <div class="kanban__item-sc">
+                    <div class="kanban__item-options">
+                        <button class="item__more-options">
+                            <span class="material-symbols-outlined" 
+                                data-itemmoreoptions="moreoptions"
+                            > more_vert </span>
+                        </button>
+                        <ul class="more-options">
+                            <li class="item__more-options-delete">Delete</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
