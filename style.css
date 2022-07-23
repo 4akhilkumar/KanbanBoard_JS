@@ -17,6 +17,11 @@ body {
     padding: 1rem;
     font-family: Poppins, sans-serif;
     font-size: 1.2rem;
+    background: #FFF;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
 }
 
 .kanban {
@@ -62,7 +67,6 @@ body {
 
 .kanban__column-title {
     font-size: 15px;
-    user-select: none;
     color: #424242;
 }
 
