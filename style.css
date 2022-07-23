@@ -121,7 +121,7 @@ body {
     position: absolute;
     border-radius: .25rem;
     transform: scale(0);
-    transform-origin: top right;
+    transform-origin: bottom right;
     box-shadow: 0 0 4px 4px rgb(0 0 0 / 15%);
     transition: transform 0.2s ease;
 }
